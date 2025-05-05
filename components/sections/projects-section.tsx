@@ -40,7 +40,7 @@ const projects = [
     description: "Implementação de um jogo inspirado no clássico PAC-MAN como projeto acadêmico.",
     technologies: ["C", "Algoritmos", "Jogos", "Programação"],
     github: "https://github.com/daniSoares08/PAC-MAN-C",
-    demo: null,
+    demo: "https://www.linkedin.com/posts/danielsoares08_pacman-programaaexaeto-jogos-activity-7116682066217320448-SgQX?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsmwOcBRVT8R68TeZcV4gxpR_RFca7attA",
   },
   {
     title: "Protótipo de Persiana Automática",
