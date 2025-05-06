@@ -12,7 +12,7 @@ const experiences = [
     period: "nov/2024 – atual",
     location: "Curitiba",
     description: [
-      "Desenvolvimento full stack de ERP (Vue.js, TypeScript, Tailwind, Element Plus).",
+      "Desenvolvimento full stack (Vue.js, TypeScript, Tailwind, Element Plus).",
       "APIs robustas em Flask (Python).",
       "Modelagem e otimização de MySQL em Ubuntu Server.",
       "Git/GitHub avançado e DevOps básico.",
