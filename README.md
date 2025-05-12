@@ -99,6 +99,4 @@ styles/            # CSS global e configurações do Tailwind
 
 **Daniel Campos Soares** – [LinkedIn](https://www.linkedin.com/in/danielsoares08/) • [campossoares.daniel@gmail.com](mailto:campossoares.daniel@gmail.com)
 
-Link do projeto: [https://github.com/daniSoares08/portfolio-daniel-next](https://github.com/daniSoares08/portfolio-daniel-next)
-
 ```
