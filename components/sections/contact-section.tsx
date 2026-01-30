@@ -1,9 +1,12 @@
 "use client"
 
+import type { CSSProperties } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Github, Linkedin, Mail, MapPin, Phone, ExternalLink } from "lucide-react"
+
+const emailCurveTail = "gmail.com"
 
 const contactInfo = [
   {
@@ -52,34 +55,75 @@ export function ContactSection() {
         <Card className="border-teal-200 dark:border-teal-800">
           <CardContent className="pt-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {contactInfo.map((contact, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-center space-x-4"
-                >
-                  <div className="flex-shrink-0 h-10 w-10 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center text-teal-600 dark:text-teal-400">
-                    {contact.icon}
-                  </div>
-                  <div className="flex-grow">
-                    <p className="text-sm text-muted-foreground">{contact.label}</p>
-                    <p className="font-medium">{contact.value}</p>
-                  </div>
-                  {contact.link && (
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => window.open(contact.link, "_blank")}
-                      aria-label={`Abrir ${contact.label}`}
-                    >
-                      <ExternalLink size={16} />
-                    </Button>
-                  )}
-                </motion.div>
-              ))}
+              {contactInfo.map((contact, index) => {
+                const shouldCurveEmail =
+                  contact.label === "E-mail" && contact.value.endsWith(emailCurveTail)
+                const emailHead = shouldCurveEmail
+                  ? contact.value.slice(0, -emailCurveTail.length)
+                  : contact.value
+                const emailTail = shouldCurveEmail ? emailCurveTail : ""
+                const curveStep = 6
+                const curveRadius = 32
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    className="flex items-center space-x-4"
+                  >
+                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-teal-100 dark:bg-teal-900 flex items-center justify-center text-teal-600 dark:text-teal-400">
+                      {contact.icon}
+                    </div>
+                    <div className="flex-grow min-w-0">
+                      <p className="text-sm text-muted-foreground">{contact.label}</p>
+                      {shouldCurveEmail ? (
+                        <p className="font-medium">
+                          <span className="email-curve">
+                            <span className="email-curve-head">{emailHead}</span>
+                            <span className="email-curve-tail">
+                              {emailTail.split("").map((char, charIndex) => {
+                                const rotation = curveStep * charIndex
+                                const angle = (rotation * Math.PI) / 180
+                                const offsetY = curveRadius * (1 - Math.cos(angle))
+                                return (
+                                  <span
+                                    key={`${char}-${charIndex}`}
+                                    className="email-curve-char"
+                                    style={
+                                      {
+                                        "--curve-offset-y": `${offsetY}px`,
+                                        "--curve-rot": `${rotation}deg`,
+                                      } as CSSProperties
+                                    }
+                                  >
+                                    {char}
+                                  </span>
+                                )
+                              })}
+                            </span>
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="font-medium">{contact.value}</p>
+                      )}
+                    </div>
+                    {contact.link && (
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="shrink-0 relative z-10"
+                        onClick={() => window.open(contact.link, "_blank")}
+                        aria-label={`Abrir ${contact.label}`}
+                      >
+                        <ExternalLink size={16} />
+                      </Button>
+                    )}
+                  </motion.div>
+                )
+              })}
             </div>
           </CardContent>
         </Card>

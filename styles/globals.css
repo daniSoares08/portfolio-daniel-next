@@ -92,3 +92,24 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @media (max-width: 450px) {
+    .email-curve {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .email-curve-tail {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .email-curve-char {
+      display: inline-block;
+      transform-origin: left bottom;
+      transform: translateY(var(--curve-offset-y, 0px)) rotate(var(--curve-rot, 0deg));
+      line-height: 1;
+    }
+  }
+}
