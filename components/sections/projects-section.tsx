@@ -21,7 +21,7 @@ const projects = [
       "Projeto de PCB para integração de múltiplos sensores: multiplexação I2C (8 canais) e 9 conectores RS-485 para encaminhamento de dados ao microcontrolador principal (STM).",
     technologies: ["PCB", "I2C", "Multiplexador", "RS-485", "Sensores", "STM32", "Hardware"],
     github: "",
-    demo: null,
+    demo: "https://www.linkedin.com/posts/danielsoares08_pcb-hardware-embeddedsystems-activity-7426818746389852160-QrcJ?utm_source=share&utm_medium=member_desktop&rcm=ACoAADsmwOcBRVT8R68TeZcV4gxpR_RFca7attA",
   },
   {
     title: "Compilador LaTeX para TI-84 Plus CE",
