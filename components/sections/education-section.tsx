@@ -9,7 +9,7 @@ const education = [
     title: "Engenharia da Computação",
     institution: "PUCPR",
     period: "jan/2022 – dez/2026",
-    status: "7.º período",
+    status: "9.º período",
     icon: <GraduationCap className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
   },
 ]
@@ -23,6 +23,7 @@ const certifications = [
 ]
 
 const courses = [
+  
   {
     title: "Hacking Ético",
     description: "Aula própria",

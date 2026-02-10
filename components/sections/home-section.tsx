@@ -17,7 +17,7 @@ export function HomeSection() {
           Olá, eu sou <span className="text-teal-600 dark:text-teal-400">Daniel Soares</span>
         </h1>
         <h2 className="text-xl sm:text-2xl md:text-3xl text-muted-foreground">
-          Desenvolvedor Full Stack & Entusiasta de Hardware
+          Desenvolvedor de Software Embarcado
         </h2>
         <div className="flex flex-wrap justify-center gap-4 pt-6">
           <Button

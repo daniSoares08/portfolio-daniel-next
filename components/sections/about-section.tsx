@@ -14,23 +14,28 @@ export function AboutSection() {
         className="space-y-6"
       >
         <h2 className="text-3xl font-bold tracking-tight text-center mb-8">Sobre Mim</h2>
+
         <Card className="border-teal-200 dark:border-teal-800">
           <CardContent className="pt-6">
             <p className="text-lg leading-relaxed">
-              Sou estudante de Engenharia da Computação, atualmente no 7.º período na PUCPR, com previsão de conclusão
-              em dezembro de 2026. Atualmente, trabalho como{" "}
-              <strong>Estagiário em Desenvolvimento de Software Full Stack</strong> na Radioenge, onde tenho a
-              oportunidade de aplicar e expandir meus conhecimentos técnicos.
+              Sou estudante de Engenharia da Computação na PUCPR, atualmente no{" "}
+              9º período, com previsão de conclusão em dezembro de 2026. Atualmente,
+              atuo como Estagiário em Desenvolvimento Embarcado na ART, desenvolvendo{" "}
+              firmware em C para aplicações críticas, com foco em STM32 e{" "}
+              FreeRTOS.
             </p>
+
             <p className="text-lg leading-relaxed mt-4">
-              Tenho paixão por desenvolvimento com Python/Flask, Vue + TypeScript, MySQL, servidores Linux e projetos
-              DIY com Arduino/ESP32. Sou entusiasta de segurança da informação, automação residencial e hardware, sempre
-              buscando aprender novas tecnologias e aprimorar minhas habilidades.
+              No dia a dia, trabalho com conceitos de sistemas de tempo real (tasks, filas, semáforos,
+              sincronização e otimização), integração com hardware e validação em bancada. Também tenho experiência com{" "}
+              projeto e análise de PCBs para testes e integração de sensores.
             </p>
+
             <p className="text-lg leading-relaxed mt-4">
-              Estou em constante aprimoramento do meu inglês e focado em aprendizado contínuo e trabalho colaborativo.
-              Acredito que a combinação de conhecimentos em software e hardware me proporciona uma visão única para
-              resolver problemas complexos e desenvolver soluções inovadoras.
+              Minha base em software (Linux/Ubuntu Server, automação com Python e desenvolvimento web com Flask + Vue +
+              TypeScript) complementa meu perfil e me ajuda a construir soluções ponta a ponta do firmware e
+              aquisição de dados até a publicação/monitoramento em servidores. Estou em constante evolução no{" "}
+              inglês e valorizo aprendizado contínuo, documentação e trabalho colaborativo.
             </p>
           </CardContent>
         </Card>

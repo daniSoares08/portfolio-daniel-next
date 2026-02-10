@@ -7,9 +7,22 @@ import { Briefcase, Calendar } from "lucide-react"
 
 const experiences = [
   {
+    title: "ART",
+    role: "Estagiário em Desenvolvimento Embarcado",
+    period: "jun/2025 – atual",
+    location: "Curitiba",
+    description: [
+      "Desenvolvimento embarcado para aplicações vitais de controle de locomotivas.",
+      "Configuração e desenvolvimento em STM com S.O. FreeRTOS.",
+      "Análise e criação de PCBs para aplicação em testes unitários de hardware.",
+      "Programação avançada em C, focada em desempenho e otimização de tasks para FreeRTOS.",
+    ],
+    skills: ["C", "STM32", "FreeRTOS", "Firmware", "PCBs", "Sistemas Críticos"],
+  },
+  {
     title: "Radioenge",
     role: "Estagiário de Desenvolvimento de Software",
-    period: "nov/2024 – atual",
+    period: "nov/2024 – jun/2025",
     location: "Curitiba",
     description: [
       "Desenvolvimento full stack (Vue.js, TypeScript, Tailwind, Element Plus).",
@@ -63,6 +76,7 @@ export function ExperienceSection() {
         className="space-y-6"
       >
         <h2 className="text-3xl font-bold tracking-tight text-center mb-8">Experiência Profissional</h2>
+
         <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-muted-foreground/20 before:to-transparent">
           {experiences.map((experience, index) => (
             <motion.div
@@ -76,6 +90,7 @@ export function ExperienceSection() {
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-muted-foreground/20 bg-background shadow-sm text-muted-foreground z-10 md:order-1 md:group-even:-translate-x-1/2 md:group-odd:translate-x-1/2">
                 <Briefcase size={20} />
               </div>
+
               <div className="w-full md:w-[calc(50%-2.5rem)] p-4 rounded-lg shadow-sm">
                 <Card className="border-teal-200 dark:border-teal-800">
                   <CardHeader className="pb-2">
@@ -85,17 +100,20 @@ export function ExperienceSection() {
                         <p className="text-muted-foreground font-medium">{experience.role}</p>
                       </div>
                     </div>
+
                     <div className="flex items-center text-sm text-muted-foreground mt-1">
                       <Calendar size={14} className="mr-1" />
                       {experience.period} • {experience.location}
                     </div>
                   </CardHeader>
+
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-1 mb-3">
                       {experience.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
+
                     <div className="flex flex-wrap gap-2 mt-3">
                       {experience.skills.map((skill, i) => (
                         <Badge key={i} variant="secondary">

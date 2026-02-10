@@ -2,33 +2,76 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, Database, Server, Cpu, Layers } from "lucide-react"
+import { Code, Database, Server, Cpu, Layers, Bug, Shield } from "lucide-react"
 
 const skillCategories = [
   {
-    title: "Linguagens & Frameworks",
-    icon: <Code className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
-    skills: ["Python (Flask avançado)", "C/C++", "Java (básico)", "TypeScript", "JavaScript", "HTML & CSS"],
-  },
-  {
-    title: "Front-end",
-    icon: <Layers className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
-    skills: ["Vue.js", "Angular (básico)", "Tailwind CSS", "Element Plus"],
-  },
-  {
-    title: "Back-end & DB",
-    icon: <Database className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
-    skills: ["Flask", "MySQL (modelagem, otimização, administração)", "SQL Server (intermediário)", "REST APIs"],
-  },
-  {
-    title: "DevOps & Ferramentas",
-    icon: <Server className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
-    skills: ["Git/GitHub", "Docker", "Linux (Ubuntu Server)", "Proxmox", "pfSense", "Fail2Ban", "ClamAV"],
-  },
-  {
-    title: "IoT & Hardware",
+    title: "Embedded & RTOS",
     icon: <Cpu className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
-    skills: ["Arduino", "ESP32/ESP8266", "Eletrônica analógica/digital", "Redes e segurança"],
+    skills: [
+      "C (avançado) para firmware",
+      "STM32 / ARM Cortex-M",
+      "FreeRTOS (tasks, prioridades, preempção)",
+      "Sincronização (mutex, semáforos, event groups)",
+      "Comunicação entre tasks (queues, stream buffers)",
+      "Memória (stack/heap), timing e otimização",
+      "Drivers/Periféricos e interrupções (ISR)",
+    ],
+  },
+  {
+    title: "Protocolos & Comunicação",
+    icon: <Layers className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+    skills: [
+      "UART",
+      "I²C (incl. multiplexação)",
+      "SPI",
+      "RS-485 (Modbus/RTU)",
+      "TCP/IP (integração com Linux/servidores)",
+    ],
+  },
+  {
+    title: "Hardware & PCB",
+    icon: <Code className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+    skills: [
+      "Projeto/análise de PCBs para integração e testes",
+      "Integração de sensores (analógico/digital)",
+      "Eletrônica analógica/digital (diagnóstico, bancada, solda)",
+      "Instrumentação (multímetro, osciloscópio, lógica)",
+      "Leitura de datasheets e validação de circuitos",
+    ],
+  },
+  {
+    title: "Debug, Qualidade & Segurança",
+    icon: <Bug className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+    skills: [
+      "Debug em JTAG/SWD (ST-LINK) e análise de falhas",
+      "Logs, rastreabilidade e diagnóstico em campo",
+      "Boas práticas: modularização, MISRA (noções), code review",
+      "Testes (unitário/integração)",
+      "Noções de sistemas críticos e confiabilidade",
+    ],
+  },
+  {
+    title: "Linux & Ferramentas",
+    icon: <Server className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+    skills: [
+      "Linux (Ubuntu), shell, redes, SSH",
+      "Git/GitHub (fluxo, branches, PRs) Avançado",
+      "Docker (básico)",
+      "Automação com Python (scripts e testes)",
+      "Proxmox, pfSense (infra/homelab)",
+    ],
+  },
+  {
+    title: "Software Complementar (Full Stack)",
+    icon: <Database className="h-6 w-6 text-teal-600 dark:text-teal-400" />,
+    skills: [
+      "Python (Flask)",
+      "MySQL (modelagem e administração)",
+      "REST APIs",
+      "Vue.js + TypeScript",
+      "HTML & CSS",
+    ],
   },
 ]
 
@@ -43,6 +86,7 @@ export function SkillsSection() {
         className="space-y-6"
       >
         <h2 className="text-3xl font-bold tracking-tight text-center mb-8">Competências</h2>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -57,6 +101,7 @@ export function SkillsSection() {
                   {category.icon}
                   <CardTitle>{category.title}</CardTitle>
                 </CardHeader>
+
                 <CardContent>
                   <ul className="space-y-2">
                     {category.skills.map((skill, i) => (
